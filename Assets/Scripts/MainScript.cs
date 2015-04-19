@@ -87,7 +87,7 @@ public class MainScript : MonoBehaviour {
     {
         print("handle action");
         float yMargin = .4f;
-        float xMargin = .8f;
+        float xMargin = 3;
 
         foreach(SadSack ss in daSax){
             if (Mathf.Abs(ss.transform.position.y - hero.transform.position.y) < yMargin)
