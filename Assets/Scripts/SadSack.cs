@@ -3,11 +3,11 @@ using System.Collections;
 using System;
 
 public class SadSack : MonoBehaviour {
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
 
 	// Use this for initialization
 	void Start () {
-        sprite = GetComponent<SpriteRenderer>();
+        
 	}
 	
 	// Update is called once per frame
