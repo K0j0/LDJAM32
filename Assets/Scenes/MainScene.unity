@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e46825bd3fc034bbc356836639baad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 943521978}
+  hero: {fileID: 0}
   cam: {fileID: 87729529}
 --- !u!4 &20109842
 Transform:
@@ -128,6 +128,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &45383842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 45383844}
+  - 114: {fileID: 45383843}
+  m_Layer: 0
+  m_Name: hero
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &45383843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45383842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb615fa69918b64aa7d42b016d3b3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  sprite: {fileID: 943521976}
+--- !u!4 &45383844
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 45383842}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.67000008, y: -.670000017, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 943521977}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &87729525
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +384,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 943521977}
   - 212: {fileID: 943521976}
-  - 114: {fileID: 943521978}
   - 95: {fileID: 943521979}
   m_Layer: 0
   m_Name: pro
@@ -384,25 +425,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943521975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.26999998, y: -1.62, z: 0}
+  m_LocalPosition: {x: .0500000007, y: .769999981, z: 0}
   m_LocalScale: {x: 4.90990782, y: 10.4396334, z: 1}
   m_Children:
   - {fileID: 1029171167}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
---- !u!114 &943521978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 943521975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbb615fa69918b64aa7d42b016d3b3da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  feet: {fileID: 1029171167}
+  m_Father: {fileID: 45383844}
+  m_RootOrder: 0
 --- !u!95 &943521979
 Animator:
   serializedVersion: 3

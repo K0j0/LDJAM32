@@ -5,8 +5,7 @@ using System;
 public class Hero : MonoBehaviour {
     public float speed = 5;
     float multiplier = 100;
-    public Transform feet;
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     Animator anim;
     bool pressed;
 
@@ -32,7 +31,6 @@ public class Hero : MonoBehaviour {
 	void Start () {
         _isMoving = false;
         anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
         pressed = false;
 	}
 	
