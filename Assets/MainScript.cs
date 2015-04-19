@@ -47,7 +47,7 @@ public class MainScript : MonoBehaviour {
     {
         if (hero.isMoving)
         {
-            print(hero.feet.transform.position + " - " + hero.transform.localPosition);
+            //print(hero.feet.transform.position + " - " + hero.transform.localPosition);
             Vector3 oldPos = hero.transform.localPosition;
             if (hero.feet.position.y > heroFeetTopBounds)
             {
