@@ -4,6 +4,7 @@ using System;
 
 public class SadSack : MonoBehaviour {
     public SpriteRenderer sprite;
+    public Animator anim;
 
 	// Use this for initialization
 	void Start () {
@@ -19,5 +20,10 @@ public class SadSack : MonoBehaviour {
     {
         float sortPos = (10 - transform.localPosition.y) * 100;
         sprite.sortingOrder = Convert.ToInt16(sortPos);
+    }
+
+    public void react()
+    {
+        anim.SetTrigger("react");
     }
 }

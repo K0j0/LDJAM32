@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MainScript : MonoBehaviour {
     public Hero hero;
     public Camera cam;
+    public List<SadSack> daSax;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +18,9 @@ public class MainScript : MonoBehaviour {
 
         Rect camBounds = new Rect();
         GameData.instance.currentZone = new Zone(heroBounds, camBounds);
+
+        //daSax = new List<SadSack>();
+        EventManager.onHeroAction += handleHeroAction;
 	}
 	
 	// Update is called once per frame
@@ -76,5 +81,28 @@ public class MainScript : MonoBehaviour {
             }
             hero.transform.localPosition = oldPos;
         }
+    }
+
+    void handleHeroAction()
+    {
+        print("handle action");
+        float yMargin = .4f;
+        float xMargin = .8f;
+
+        foreach(SadSack ss in daSax){
+            if (Mathf.Abs(ss.transform.position.y - hero.transform.position.y) < yMargin)
+            {
+                if (Mathf.Abs(ss.transform.position.x - hero.transform.position.x) < xMargin)
+                {
+                    ss.react();
+                    print("action sack!");
+                }
+            }
+        }
+    }
+
+    public void OnDestroy()
+    {
+        EventManager.onHeroAction -= handleHeroAction;
     }
 }

@@ -6,7 +6,7 @@ public class Hero : MonoBehaviour {
     public float speed = 5;
     float multiplier = 100;
     public SpriteRenderer sprite;
-    Animator anim;
+    public Animator anim;
     bool pressed;
 
     bool _isMoving;
@@ -30,7 +30,6 @@ public class Hero : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _isMoving = false;
-        anim = GetComponent<Animator>();
         pressed = false;
 	}
 	
@@ -83,6 +82,7 @@ public class Hero : MonoBehaviour {
                 pressed = true;
                 print("Hi 5");
                 anim.SetTrigger("doAction");
+                EventManager.callHeroAction();
             }
         }
         else if(!Input.anyKey){

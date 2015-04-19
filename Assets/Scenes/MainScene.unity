@@ -116,6 +116,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 45383843}
   cam: {fileID: 87729529}
+  daSax:
+  - {fileID: 661831803}
 --- !u!4 &20109842
 Transform:
   m_ObjectHideFlags: 0
@@ -157,6 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sprite: {fileID: 943521976}
+  anim: {fileID: 943521979}
 --- !u!4 &45383844
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1397827071}
+  anim: {fileID: 1397827073}
 --- !u!1 &943521975
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +364,7 @@ GameObject:
   - 212: {fileID: 943521976}
   - 95: {fileID: 943521979}
   m_Layer: 0
-  m_Name: pro
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -612,6 +616,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1397827072}
   - 212: {fileID: 1397827071}
+  - 95: {fileID: 1397827073}
   m_Layer: 0
   m_Name: body
   m_TagString: Untagged
@@ -657,6 +662,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 661831801}
   m_RootOrder: 0
+--- !u!95 &1397827073
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397827070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2ab22aedae9b814d9d30bc6c6ea5654, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1557207590
 GameObject:
   m_ObjectHideFlags: 0
