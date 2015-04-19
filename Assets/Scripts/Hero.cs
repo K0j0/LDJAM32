@@ -8,6 +8,7 @@ public class Hero : MonoBehaviour {
     public SpriteRenderer sprite;
     public Animator anim;
     bool pressed;
+    bool facingLeft;
 
     bool _isMoving;
     public bool isMoving
@@ -31,6 +32,7 @@ public class Hero : MonoBehaviour {
 	void Start () {
         _isMoving = false;
         pressed = false;
+        facingLeft = false;
 	}
 	
 	// Update is called once per frame
@@ -50,12 +52,14 @@ public class Hero : MonoBehaviour {
         {
             //print("H+");
             currPos.x += adjSpeed;
+            facingLeft = false;
             _isMoving = true;
         }
         else if (Input.GetAxis("Horizontal") < 0)
         {
             //print("H-");
             currPos.x -= adjSpeed;
+            facingLeft = true;
             _isMoving = true;
         }
 
@@ -71,7 +75,16 @@ public class Hero : MonoBehaviour {
             currPos.y -= adjSpeed;
             _isMoving = true;
         }
+        anim.SetBool("walk", _isMoving);
         transform.localPosition = currPos;
+        if (facingLeft)
+        {
+            if (transform.localScale.x > 0) transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
+        else
+        {
+            if (transform.localScale.x < 0) transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     void handleInput()
@@ -85,7 +98,7 @@ public class Hero : MonoBehaviour {
                 EventManager.callHeroAction();
             }
         }
-        else if(!Input.anyKey){
+        else if(Input.GetKeyUp(KeyCode.Z)){
             pressed = false;
             print("Release");
         }
