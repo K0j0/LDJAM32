@@ -8,6 +8,7 @@ public class Hero : MonoBehaviour {
     public Transform feet;
     SpriteRenderer sprite;
     Animator anim;
+    bool pressed;
 
     bool _isMoving;
     public bool isMoving
@@ -32,6 +33,7 @@ public class Hero : MonoBehaviour {
         _isMoving = false;
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        pressed = false;
 	}
 	
 	// Update is called once per frame
@@ -77,10 +79,17 @@ public class Hero : MonoBehaviour {
 
     void handleInput()
     {
-        if (Input.GetKeyUp(KeyCode.Z))
+        if (!pressed)
         {
-            print("Hi 5");
-            anim.SetTrigger("doAction");
+            if(Input.GetKey(KeyCode.Z)){
+                pressed = true;
+                print("Hi 5");
+                anim.SetTrigger("doAction");
+            }
+        }
+        else if(!Input.anyKey){
+            pressed = false;
+            print("Release");
         }
     }
 
