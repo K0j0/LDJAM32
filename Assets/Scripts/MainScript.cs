@@ -6,6 +6,7 @@ public class MainScript : MonoBehaviour {
     public Hero hero;
     public Camera cam;
     public List<SadSack> daSax;
+    public AudioSource sfx;
 
 	// Use this for initialization
 	void Start () {
@@ -94,6 +95,7 @@ public class MainScript : MonoBehaviour {
             {
                 if (Mathf.Abs(ss.transform.position.x - hero.transform.position.x) < xMargin)
                 {
+                    sfx.Play();
                     ss.react();
                     print("action sack!");
                 }
