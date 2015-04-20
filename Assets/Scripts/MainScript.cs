@@ -12,7 +12,7 @@ public class MainScript : MonoBehaviour {
 	    // make zones
         Rect heroBounds = new Rect();
         heroBounds.xMin = -6.7f;
-        heroBounds.xMax = 6.7f * 2;
+        heroBounds.xMax = 19f;
         heroBounds.yMin = -4.5f;
         heroBounds.yMax = -.67f;
 
